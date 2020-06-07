@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <ol>
+      <%todo.forEach(function(item, idx){%>
+        <li><%=item%></li>
+        <form action="/<%=idx%>?_method=DELETE" method="POST"><button type="submit">X</button></form>
+      <%})%>
+    </ol>
+    <form action="/" method="POST"><input type="text" name="item"><button type="submit">Add Todo</button></form>
+  </body>
+</html>
